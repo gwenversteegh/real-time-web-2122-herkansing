@@ -1,0 +1,197 @@
+*{
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    font-family:serif;
+}
+
+body{
+    background-image: linear-gradient( #fff700 ,#ff8400 );
+    color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.onzichtbaar{
+    display: none;
+}
+
+h1{
+    color: black;
+    font-size: 5em;
+    text-align:center;
+}
+
+p, label, input, h3{
+    font-size: 1.5em;
+}
+
+header{
+    padding: 3em;
+    height: 17vh;
+    margin-bottom: 4em;
+}
+
+header ul{
+    display: flex;
+    list-style-type: none;
+}
+
+header ul li{
+    font-size: 1.5em;
+    margin-left: 0.5em;
+    padding:0 0.5em;
+    background-color: #ff8400;
+}
+
+main{
+    height: 83vh;
+    width: 100vw;
+    overflow: scroll;
+}
+
+/* ------------------ index ------------------- */
+main section > form{
+    padding: 3em;
+    background-color: #fff700;
+    border: 3px solid white;
+    margin: 5vh auto 0 auto;
+    width: 90vw;
+}
+
+main section > form input[type="text"]{
+    display: block;
+    margin: 0.5em 0;
+    padding: 0.75em 0;
+    border: 3px solid #fff700;
+    padding-left: 2em;
+    width: 100%;
+}
+
+main section > form input[type="submit"]{
+    background-color: #ff8400;
+    border: none;
+    color: black;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ------------------ quiz ------------------- */
+.quiz {
+    width: 100vw;
+}
+
+.quiz > ol{
+    width: 100%;
+    list-style-type: none;
+    padding: 2em;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+.quiz > ol > li{
+    padding: 3em;
+    margin: 3em;
+    background-color:white;
+    width: 85vw;
+    max-width: 1100px;
+    
+}
+
+.quiz > ol > li p{
+    font-size: 1.75em;
+}
+
+/* antwoord opties */
+.quiz > ol > li ol{
+    list-style-type: upper-alpha;
+    list-style-position: inside;
+}
+
+.quiz > ol > li ol li{
+    margin-bottom: 0.5em;
+}
+
+form input[type="radio"]{
+    display: none;
+}
+
+form input[type="radio"]:checked + label{
+    background-color: red;
+}
+
+form input[type="radio"].true:checked + label{
+    background-color: green;
+    pointer-events: none;
+}
+
+form > div > div > label{
+    display: block;
+    margin-bottom: 0.5em;
+    padding: 0.75em 0;
+    background-color: #fff700;
+    border: none;
+    padding-left: 2em;
+    width: 100%;
+}
+
+form > div > div > label:hover{
+    background-color: #ff8400;
+}
+
+input[type="submit"]{
+    padding: 0.5em 1em;
+}   
+
+/* ------------------ Ranking ------------------- */
+.ranking{
+    padding: 3em;
+    background-color: #fff700;
+    margin: 5vh auto 0 auto;
+    width: 90vw;
+}
+
+.ranking > p{
+    font-size: 10vw;
+}
+
+.ranking ol{
+    margin-top: 1em;
+    list-style-type: decimal;
+}
+
+.ranking ol li{
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1em;
+    margin-bottom: 0.75em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ranking ol li h4{
+    font-size: 1.8em;
+}
+
+
+/* ------------------ error page ------------------- */
+.error{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error h2{
+    font-size: 3em;
+}
+
+.error section{
+    width: 95vw;
+    max-width: 900px;
+    padding: 3em;
+    background-color: #fff700;
+}

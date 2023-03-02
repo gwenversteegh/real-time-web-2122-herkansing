@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Big Animal Quiz</title>
+</head>
+<body>
+    <header>
+        <h1>Big Animal Quiz</h1>
+        <ul>
+            <h3>Online:</h3>
+            <% online.forEach(name => { %>   
+             <li id="text<%- name.id %>">
+                 <p><%- name.username %></p>
+             </li>
+            <% }) %>
+        </ul>
+    </header>
+    <main>
+        <section class="index">
+            <form action="" id="nameform">
+                <label for="name">Please, put your name here</label>
+                <input type="text" name="name" id="name">
+                <input type="submit" value="Start the quiz">
+            </form>
+        </section>
+
+        <section class="quiz onzichtbaar">
+            <ol>
+                <% data.forEach(function(question, i) { %>   
+                    <li> 
+                        <p> <%- question.question %></p>
+                        <form action="" class="form">
+                            <div>
+                                <div>
+                                    <input type="radio" name="vraag-<%= i + 1%>" id="<%- question.correct_answer %><%=i + 1%>" class="true"><label for="<%- question.correct_answer %><%=i + 1%>"><%- question.correct_answer %></label>
+                                </div>
+        
+                                <% question.incorrect_answers.forEach(function(awnser) { %>
+                                    <div>
+                                        <input type="radio" name="vraag-<%=i + 1%>" id="<%- awnser %>" class="false"><label for="<%- awnser %>"><%- awnser %></label> 
+                                    </div>   
+                                <% }) %>
+                            </div>
+                        </form>
+    
+                    </li>
+                <% }) %>
+            </ol>
+        </section>
+
+        <section class="ranking onzichtbaar">
+            <h2>Ranking list</h2>
+            <p>Your result: <span>0</span>/20</p>
+            <ol>
+                
+            </ol>
+        </section>
+        
+    </main>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
