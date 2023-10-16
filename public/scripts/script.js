@@ -39,7 +39,7 @@ socket.on('name', user => {
   rankingList.insertAdjacentHTML('beforeend', 
   `<li id="${user.id}"> 
       <p>${user.username}</p>
-      <p><span>${amountGoodAnswers} </span>/10</p>
+      <p><span>${amountGoodAnswers} </span>/20</p>
   </li>`)
 })
 
