@@ -54,10 +54,10 @@ io.on('connection', (socket) => {
 
     online = online.filter(element => {
       if(element.id !== socket.id) {
-        // Voeg 'm toe aan de nieuwe array
+        // add to new array
         return true;
       } else {
-        // Filter 'm uit de nieuwe array
+        // Filter from new array
         return false;
       }
     })

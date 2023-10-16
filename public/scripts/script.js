@@ -29,13 +29,13 @@ nameForm.addEventListener('submit', event => {
 })
 
 socket.on('name', user => {
-  //adds item to online-list  
+  //adds name to online-list  
   names.insertAdjacentHTML('beforeend', 
   `<li id="text${user.id}"> 
       <p>${user.username}</p>
   </li>`)
 
-  //adds item to ranking
+  //adds name to ranking
   rankingList.insertAdjacentHTML('beforeend', 
   `<li id="${user.id}"> 
       <p>${user.username}</p>
@@ -45,7 +45,7 @@ socket.on('name', user => {
 
 socket.on('ranking', ranking => {
     let result = document.querySelector(`#${ranking.id} p:last-of-type span`)
-    //update waarde in ranking lijst
+    //update ranking order
     let rank = ranking.amount
     result.innerHTML= `${rank}`
 })
@@ -66,7 +66,7 @@ function questionFormActions (){
 }
 questionFormActions()
 
-// randomize order of possible answers 
+// randomize order of answers 
 const options = document.querySelectorAll(".quiz ol li form > div")
 function randomizeAnswers(){
   options.forEach((answers)=>{
@@ -77,7 +77,7 @@ function randomizeAnswers(){
 }
 randomizeAnswers()
 
-// disable form after answer is filled in
+// disable form after answer is clicked
 function disableForm(){
   questionForms.forEach((form)=>{
     form.addEventListener('change', event => {
